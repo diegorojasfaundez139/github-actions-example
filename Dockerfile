@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM eclipse-temurin:17-jre
 EXPOSE 8080
 ADD target/springboot-images-new.jar springboot-images-new.jar
 ENTRYPOINT ["java","-jar","/springboot-images-new.jar"]
