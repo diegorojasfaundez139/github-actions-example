@@ -32,3 +32,12 @@ jobs:
       run: mvn clean install
 
 
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v7
+      with:
+        image: diegorojasfa/springboot-images-new
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
